@@ -54,6 +54,7 @@ func getRandomJoke() {
 		fmt.Printf("Could not unmarshal reponseBytes. %v", err)
 	}
 
+	fmt.Println(string(joke.Joke))
 }
 
 func getJokeData(baseAPI string) []byte {
