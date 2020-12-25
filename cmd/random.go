@@ -59,4 +59,5 @@ func getJokeData(baseAPI string) []byte {
 	}
 
 	request.Header.Add("Accept", "application/json")
+	request.Header.Add("User-Agent", "Dadjoke CLI (https://github.com/example/dadjoke)")
 }
