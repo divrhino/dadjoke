@@ -17,6 +17,7 @@ package cmd
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 
 	"github.com/spf13/cobra"
@@ -52,4 +53,8 @@ func getJokeData(baseAPI string) []byte {
 		baseAPI,        //url
 		nil,            //body
 	)
+
+	if err != nil {
+		log.Printf("Could not request a dadjoke. %v", err)
+	}
 }
