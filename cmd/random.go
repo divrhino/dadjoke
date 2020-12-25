@@ -68,4 +68,7 @@ func getJokeData(baseAPI string) []byte {
 	}
 
 	responseBytes, err := ioutil.ReadAll(response.Body)
+	if err != nil {
+		log.Printf("Could not read response body. %v", err)
+	}
 }
