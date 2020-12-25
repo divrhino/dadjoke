@@ -27,7 +27,7 @@ var randomCmd = &cobra.Command{
 	Short: "Get a random dad joke",
 	Long:  `This command fetches a random dad joke from the icanhazdadjoke api`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("random called")
+		getRandomJoke()
 	},
 }
 
@@ -39,4 +39,8 @@ type Joke struct {
 	ID     string `json:"id"`
 	Joke   string `json:"joke"`
 	Status int    `json:"status"`
+}
+
+func getRandomJoke() {
+	fmt.Println("Get random joke :P")
 }
