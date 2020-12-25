@@ -34,3 +34,9 @@ var randomCmd = &cobra.Command{
 func init() {
 	rootCmd.AddCommand(randomCmd)
 }
+
+type Joke struct {
+	ID     string `json:"id"`
+	Joke   string `json:"joke"`
+	Status int    `json:"status"`
+}
