@@ -17,6 +17,7 @@ package cmd
 
 import (
 	"fmt"
+	"io/ioutil"
 	"log"
 	"net/http"
 
@@ -65,4 +66,6 @@ func getJokeData(baseAPI string) []byte {
 	if err != nil {
 		log.Printf("Could not make a request. %v", err)
 	}
+
+	responseBytes, err := ioutil.ReadAll(response.Body)
 }
