@@ -44,3 +44,7 @@ type Joke struct {
 func getRandomJoke() {
 	fmt.Println("Get random joke :P")
 }
+
+func getJokeData(baseAPI string) []byte {
+
+}
