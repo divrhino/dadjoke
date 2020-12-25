@@ -57,4 +57,6 @@ func getJokeData(baseAPI string) []byte {
 	if err != nil {
 		log.Printf("Could not request a dadjoke. %v", err)
 	}
+
+	request.Header.Add("Accept", "application/json")
 }
