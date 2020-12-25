@@ -16,6 +16,7 @@ limitations under the License.
 package cmd
 
 import (
+	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"log"
@@ -45,7 +46,14 @@ type Joke struct {
 }
 
 func getRandomJoke() {
-	fmt.Println("Get random joke :P")
+	url := "https://icanhazdadjoke.com/"
+	responseBytes := getJokeData(url)
+	joke := Joke{}
+
+	if err := json.Unmarshal(responseBytes, &joke); err != nil {
+		fmt.Printf("Could not unmarshal reponseBytes. %v", err)
+	}
+
 }
 
 func getJokeData(baseAPI string) []byte {
